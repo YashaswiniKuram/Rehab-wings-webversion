@@ -193,4 +193,4 @@ This project is for rehabilitation and educational purposes.
 
 ## 👤 Author
 
-**Nihith** — [GitHub](https://github.com/Nihith303)
+**Kuram Yashaswini** — [GitHub](https://github.com/Nihith303)
