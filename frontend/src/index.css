@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-game-dark text-slate-100 font-sans antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-800 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-600 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-slate-800/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl shadow-2xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:bg-slate-800/80 hover:border-primary-400/30 hover:shadow-primary-400/10 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 bg-gradient-to-r from-primary-400 to-primary-600 text-white font-semibold rounded-xl
+           shadow-lg shadow-primary-500/25 transition-all duration-300
+           hover:shadow-xl hover:shadow-primary-500/40 hover:-translate-y-0.5
+           active:translate-y-0 active:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 bg-slate-700/80 text-slate-200 font-semibold rounded-xl border border-slate-600/50
+           transition-all duration-300
+           hover:bg-slate-600/80 hover:border-primary-400/30 hover:-translate-y-0.5;
+  }
+
+  .btn-game {
+    @apply px-10 py-4 bg-gradient-to-r from-game-pipe to-game-pipeDark text-white font-bold text-lg rounded-2xl
+           shadow-lg shadow-green-500/25 transition-all duration-300
+           hover:shadow-xl hover:shadow-green-500/40 hover:-translate-y-1 hover:scale-105
+           active:translate-y-0 active:scale-100;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-slate-900/60 border border-slate-600/50 rounded-xl text-slate-100
+           placeholder-slate-500 outline-none transition-all duration-300
+           focus:border-primary-400/60 focus:ring-2 focus:ring-primary-400/20 focus:bg-slate-900/80;
+  }
+
+  .label-text {
+    @apply block text-sm font-medium text-slate-400 mb-2;
+  }
+
+  .page-container {
+    @apply min-h-screen flex flex-col;
+  }
+
+  .content-container {
+    @apply flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-300 to-primary-500 bg-clip-text text-transparent;
+  }
+
+  .stat-card {
+    @apply glass-card p-6 text-center;
+  }
+
+  .stat-value {
+    @apply text-3xl md:text-4xl font-bold text-primary-300;
+  }
+
+  .stat-label {
+    @apply text-sm text-slate-400 mt-1;
+  }
+}
+
+/* Game canvas styles */
+#game-canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Leaderboard rank badges */
+.rank-gold {
+  @apply bg-gradient-to-br from-yellow-400 to-amber-600 text-white;
+}
+.rank-silver {
+  @apply bg-gradient-to-br from-slate-300 to-slate-500 text-white;
+}
+.rank-bronze {
+  @apply bg-gradient-to-br from-orange-400 to-orange-700 text-white;
+}
